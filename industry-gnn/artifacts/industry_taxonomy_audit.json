@@ -1,0 +1,33 @@
+{
+  "captured_at_utc": "2026-11-11T10:31:59.873570+00:00",
+  "policy": "versioned",
+  "configured_versions": [
+    {
+      "source": "SW2014",
+      "applicable_start": "2015-09-01",
+      "applicable_end": "2021-07-29"
+    },
+    {
+      "source": "SW2021",
+      "applicable_start": "2021-07-30",
+      "applicable_end": null
+    }
+  ],
+  "rows_by_split_and_taxonomy": {
+    "holdout": {
+      "SW2021": 12282
+    },
+    "test": {
+      "SW2021": 30539
+    },
+    "train": {
+      "SW2014": 82952,
+      "SW2021": 6293
+    },
+    "validation": {
+      "SW2021": 29387
+    }
+  },
+  "missing_industry_fraction": 0.02896818269093792,
+  "claim_boundary": "Version-applicable taxonomy and effective membership intervals are enforced. TuShare revision/announcement timestamps are not available, so this is a best-effort point-in-time classification rather than formal proof against all vendor backfills."
+}

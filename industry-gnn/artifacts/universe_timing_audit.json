@@ -1,0 +1,38 @@
+{
+  "captured_at_utc": "2026-11-11T10:31:59.861706+00:00",
+  "future_price_filter_applied": false,
+  "future_price_columns_used_for_decision_filter": [],
+  "decision_rule": "signal-date point-in-time membership plus signal-date ret_60 and beta_60 availability",
+  "label_rule": "future entry/exit prices determine label_available only; unlabeled rows remain prediction/backtest candidates",
+  "by_split": {
+    "holdout": {
+      "decision_rows": 12282,
+      "labeled_rows": 12274,
+      "unlabeled_decision_rows": 8,
+      "entry_price_missing_rows": 2,
+      "exit_price_missing_rows": 8
+    },
+    "test": {
+      "decision_rows": 30539,
+      "labeled_rows": 30510,
+      "unlabeled_decision_rows": 29,
+      "entry_price_missing_rows": 7,
+      "exit_price_missing_rows": 29
+    },
+    "train": {
+      "decision_rows": 89245,
+      "labeled_rows": 88834,
+      "unlabeled_decision_rows": 411,
+      "entry_price_missing_rows": 112,
+      "exit_price_missing_rows": 367
+    },
+    "validation": {
+      "decision_rows": 29387,
+      "labeled_rows": 29376,
+      "unlabeled_decision_rows": 11,
+      "entry_price_missing_rows": 3,
+      "exit_price_missing_rows": 10
+    }
+  },
+  "metadata_label_available_fraction": 0.9971570673818386
+}

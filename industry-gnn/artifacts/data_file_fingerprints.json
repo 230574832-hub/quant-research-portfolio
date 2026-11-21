@@ -1,0 +1,61 @@
+{
+  "data_key": "9067bc65eeed",
+  "data_fingerprint": "d2f3f941018d6e917d9a0ac2549feb01fc8ec04a7a31718a2b7c27361632d4b7",
+  "files": [
+    {
+      "path": "prepared/download_9067bc65eeed/adj_factor.parquet",
+      "size_bytes": 654430,
+      "sha256": "72323c9d3305ffafeb051709d0bcd4db51217bf7adf897c6fed636b9dc96c127"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/benchmark.parquet",
+      "size_bytes": 206962,
+      "sha256": "9da0fe1d95f5dd61bfddfaf7fa1a513a1ea3e078e41f38547597cfbcb5d9d79f"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/daily.parquet",
+      "size_bytes": 39175545,
+      "sha256": "95d9ba362969e42b140eee6870174c1603ebc4402cad524c00da3c7935773b6c"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/daily_basic.parquet",
+      "size_bytes": 38123405,
+      "sha256": "1d297c28c943b582b007febf55fa6257b108b5c9ac928d5070edf96a63d3deed"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/index_weight.parquet",
+      "size_bytes": 128431,
+      "sha256": "6f261c0b908e2d4539adfdf1a8d5f9014f49c48fc210acdb399cc3a3dfdd82f6"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/industry_class.parquet",
+      "size_bytes": 7015,
+      "sha256": "a9038a68a0aa364a8b5dee17b6749f4658ee1fb1311f7bfc07839650ddcfa273"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/industry_members.parquet",
+      "size_bytes": 234167,
+      "sha256": "8bf2cd63d7ed3c2c787c8243cf925ab5e4ede4df390aac238a5c6051fa544103"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/memberships.parquet",
+      "size_bytes": 154363,
+      "sha256": "d9bc6c8b69c6c5c4c63671bc77822fe089de666a67675d984a2b511c74bdb6c4"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/stk_limit.parquet",
+      "size_bytes": 6755083,
+      "sha256": "f29ee2dbf7fd544c0006ee49331833853b886ddc642e3def3dc76f077517a469"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/suspend_d.parquet",
+      "size_bytes": 42637,
+      "sha256": "7527a3b9078c9198b3c196aa2e68bb3f20857710ece4daba7ee56883d824173e"
+    },
+    {
+      "path": "prepared/download_9067bc65eeed/trade_cal.parquet",
+      "size_bytes": 40085,
+      "sha256": "3fd27cfb590fac2e20eb88dbae14ad997e3697131c57c83fc43a1e4b857c897c"
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+project:
+  name: Industry_GNN_Research
+  seed: 42
+  timezone: Asia/Shanghai
+  index_code: 000300.SH
+  benchmark_code: 000300.SH
+  industry_taxonomy_policy: versioned
+  industry_taxonomy_versions:
+  - source: SW2014
+    applicable_start: '2015-09-01'
+    applicable_end: '2021-07-29'
+  - source: SW2021
+    applicable_start: '2021-07-30'
+    applicable_end: null
+  strict_industry_taxonomy: true
+  target: excess_return
+  require_cuda_for_full_run: true
+  industry_effective_lag_days: 1
+  acknowledge_industry_announcement_time_risk: true
+formal_protocol:
+  protocol_id: CSI300_INDUSTRY_GNN_PIT_HIST_V4_LOCAL
+  frozen: true
+  independent_test_interval:
+  - '2024-01-01'
+  - '2025-12-31'
+  expected_splits:
+    train_start: '2016-01-01'
+    train_end: '2021-12-31'
+    validation_start: '2022-01-01'
+    validation_end: '2023-12-31'
+    test_start: '2024-01-01'
+    test_end: '2025-12-31'
+  expected_models:
+  - ridge
+  - shared_mlp
+  - industry_mlp
+  - gcn
+  - gat
+  - gcn_random
+  - gat_random
+  - gcn_label_random
+  - gat_label_random
+  - gat_self_only
+  expected_training_seeds:
+  - 42
+  - 3407
+  - 2026
+  expected_random_graph_seeds:
+  - 1042
+  - 13407
+  - 12026
+  random_graph_replication: anchored_factorial
+  expected_model_config:
+    hidden_dims:
+    - 32
+    - 64
+    graph_layers: 1
+    mlp_layers: 1
+    gat_heads: 2
+    dropout: 0.15
+    learning_rate: 0.001
+    weight_decay: 0.0001
+    batch_graphs: 8
+    max_epochs: 150
+    patience: 20
+    min_delta: 1.0e-06
+    ridge_alphas:
+    - 1.0
+    - 10.0
+    hyperparameter_selection_seed: 42
+    random_graph_swaps_per_edge: 3
+    graph_fusion: own_message_difference
+    amp: false
+  expected_primary_comparisons:
+  - GCN minus Shared MLP
+  - GAT minus Industry MLP
+  - GAT minus GCN
+  - GAT real minus GAT random
+  - GAT real minus label-permuted industry
+  - GAT real minus GAT self-only
+  expected_project_config:
+    industry_taxonomy_policy: versioned
+    strict_industry_taxonomy: true
+v4_extension:
+  protocol_id: CSI300_INDUSTRY_GNN_PIT_HIST_V4_NOTEBOOK
+  model_set:
+  - ridge
+  - shared_mlp
+  - industry_mlp
+  - res_gcn_complete
+  - res_gat_complete
+  - res_gat_sparse
+  - hist_factor
+  primary_portfolio_top_k: 10
+  execution_policy: conservative_open_no_queue_fill
+  benchmark_holding_interval: portfolio_open_to_next_portfolio_open
+  hist_variant: factor_panel_industry_only
+  hist_exact_paper_replication: false
+data:
+  api_pause_seconds: 0.12
+  max_retries: 6
+  request_timeout_seconds: 60
+  refresh_cache: false
+  feature_warmup_trading_days: 80
+  daily_basic_lag_trading_days: 1
+  index_membership_lag_calendar_days: 1
+  label_horizon_rebalances: 1
+  endpoints:
+  - daily
+  - adj_factor
+  - daily_basic
+  - stk_limit
+  - suspend_d
+  daily_fields: ts_code,trade_date,open,high,low,close,pre_close,vol,amount
+  daily_basic_fields: ts_code,trade_date,turnover_rate,volume_ratio,pb,total_mv,circ_mv
+  adj_factor_fields: ts_code,trade_date,adj_factor
+  limit_fields: ts_code,trade_date,up_limit,down_limit
+  suspend_fields: ts_code,trade_date,suspend_type,suspend_timing
+  start: '2015-09-01'
+  end: '2026-11-10'
+  max_stocks_per_snapshot: null
+features:
+  schema_version: 3
+  raw:
+  - ret_1
+  - ret_5
+  - ret_20
+  - ret_60
+  - volatility_20
+  - beta_60
+  - volume_change_5
+  - amount_change_5
+  - turnover_rate
+  - log_total_mv
+  - pb
+  - industry_relative_ret_20
+  winsor_lower: 0.01
+  winsor_upper: 0.99
+  min_cross_section: 10
+  min_history_days: 60
+splits:
+  train_start: '2016-01-01'
+  train_end: '2021-12-31'
+  validation_start: '2022-01-01'
+  validation_end: '2023-12-31'
+  test_start: '2024-01-01'
+  test_end: '2025-12-31'
+  purge_labels_crossing_boundaries: true
+  holdout_start: '2026-01-16'
+  holdout_end: '2026-11-10'
+models:
+  enabled:
+  - ridge
+  - shared_mlp
+  - industry_mlp
+  - gcn
+  - gat
+  - gcn_random
+  - gat_random
+  - gcn_label_random
+  - gat_label_random
+  - gat_self_only
+  hidden_dims:
+  - 32
+  - 64
+  graph_layers: 1
+  mlp_layers: 1
+  gat_heads: 2
+  dropout: 0.15
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_graphs: 8
+  max_epochs: 150
+  patience: 20
+  min_delta: 1.0e-06
+  ridge_alphas:
+  - 1.0
+  - 10.0
+  hyperparameter_selection_seed: 42
+  training_seeds:
+  - 42
+  - 3407
+  - 2026
+  amp: false
+  run_random_graph_ablation: true
+  run_gat_random_graph_ablation: true
+  run_gat_self_loop_ablation: true
+  random_graph_seeds:
+  - 1042
+  - 13407
+  - 12026
+  random_graph_replication: anchored_factorial
+  random_graph_anchor_training_seed: 42
+  random_graph_swaps_per_edge: 3
+  graph_fusion: own_message_difference
+evaluation:
+  bootstrap_repetitions: 5000
+  bootstrap_block_length: 4
+  top_k:
+  - 5
+  - 10
+  - 20
+  primary_top_k: 10
+  base_cost_scenario: base
+  neutral_prediction_atol: 1.0e-10
+  neutral_prediction_rtol: 1.0e-05
+  stamp_duty_schedule:
+  - effective_start: '2008-09-19'
+    effective_end: '2023-08-27'
+    stamp_duty_sell_bps: 10.0
+  - effective_start: '2023-08-28'
+    effective_end: null
+    stamp_duty_sell_bps: 5.0
+  cost_scenarios:
+    low:
+      commission_bps: 1.0
+      stamp_duty_policy: historical
+      slippage_bps: 2.0
+    base:
+      commission_bps: 2.0
+      stamp_duty_policy: historical
+      slippage_bps: 5.0
+    high:
+      commission_bps: 3.0
+      stamp_duty_policy: historical
+      slippage_bps: 10.0
+    counterfactual_low_tax:
+      commission_bps: 2.0
+      stamp_duty_policy: fixed
+      stamp_duty_sell_bps: 5.0
+      slippage_bps: 5.0
+  paired_rankic_comparisons:
+  - name: GCN minus Shared MLP
+    model_a: gcn
+    model_b: shared_mlp
+    hypothesis: H1
+    primary: true
+  - name: GAT minus Industry MLP
+    model_a: gat
+    model_b: industry_mlp
+    hypothesis: H2
+    primary: true
+  - name: GAT minus GCN
+    model_a: gat
+    model_b: gcn
+    hypothesis: H3
+    primary: true
+  - name: GAT real minus GAT random
+    model_a: gat
+    model_b: gat_random
+    hypothesis: H4a
+    primary: true
+  - name: GAT real minus label-permuted industry
+    model_a: gat
+    model_b: gat_label_random
+    hypothesis: H4b
+    primary: true
+  - name: GAT real minus GAT self-only
+    model_a: gat
+    model_b: gat_self_only
+    hypothesis: H4c
+    primary: true
+  - name: GCN minus Industry MLP
+    model_a: gcn
+    model_b: industry_mlp
+    hypothesis: H2-secondary
+    primary: false
+  - name: GCN real minus label-permuted industry
+    model_a: gcn
+    model_b: gcn_label_random
+    hypothesis: H4-secondary
+    primary: false
+run_mode: FULL_RUN
+_runtime:
+  data_fingerprint: d2f3f941018d6e917d9a0ac2549feb01fc8ec04a7a31718a2b7c27361632d4b7
+  experiment_id: CSI300_INDUSTRY_GNN_PIT_HIST_V4_LOCAL_FULL_RUN_bf28f2f758d5a672

@@ -1,0 +1,322 @@
+{
+  "captured_at_utc": "2026-11-11T10:31:45.560852+00:00",
+  "datasets": {
+    "trade_cal": {
+      "rows": 4089,
+      "columns": [
+        "exchange",
+        "cal_date",
+        "is_open",
+        "pretrade_date"
+      ],
+      "key_columns": [
+        "exchange",
+        "cal_date"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "exchange": 0.0,
+        "cal_date": 0.0,
+        "is_open": 0.0,
+        "pretrade_date": 0.0
+      }
+    },
+    "index_weight": {
+      "rows": 40200,
+      "columns": [
+        "index_code",
+        "con_code",
+        "trade_date",
+        "weight"
+      ],
+      "key_columns": [
+        "index_code",
+        "con_code",
+        "trade_date"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "index_code": 0.0,
+        "con_code": 0.0,
+        "trade_date": 0.0,
+        "weight": 0.0
+      }
+    },
+    "industry_class": {
+      "rows": 59,
+      "columns": [
+        "index_code",
+        "industry_name",
+        "level",
+        "industry_code",
+        "is_pub",
+        "parent_code",
+        "src",
+        "taxonomy_source",
+        "taxonomy_applicable_start",
+        "taxonomy_applicable_end"
+      ],
+      "key_columns": [
+        "taxonomy_source",
+        "index_code"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "index_code": 0.0,
+        "industry_name": 0.0,
+        "level": 0.0,
+        "industry_code": 0.0,
+        "is_pub": 0.474576,
+        "parent_code": 0.0,
+        "src": 0.0,
+        "taxonomy_source": 0.0,
+        "taxonomy_applicable_start": 0.0,
+        "taxonomy_applicable_end": 0.525424
+      }
+    },
+    "industry_members": {
+      "rows": 15556,
+      "columns": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new",
+        "taxonomy_source",
+        "taxonomy_applicable_start",
+        "taxonomy_applicable_end"
+      ],
+      "key_columns": [
+        "taxonomy_source",
+        "ts_code",
+        "l1_code",
+        "in_date",
+        "out_date"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "l1_code": 0.0,
+        "l1_name": 0.0,
+        "l2_code": 0.0,
+        "l2_name": 0.0,
+        "l3_code": 0.0,
+        "l3_name": 0.0,
+        "ts_code": 0.0,
+        "name": 0.0,
+        "in_date": 0.0,
+        "out_date": 0.7437,
+        "is_new": 0.0,
+        "taxonomy_source": 0.0,
+        "taxonomy_applicable_start": 0.0,
+        "taxonomy_applicable_end": 0.509643
+      }
+    },
+    "benchmark": {
+      "rows": 2716,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "key_columns": [
+        "ts_code",
+        "trade_date"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "ts_code": 0.0,
+        "trade_date": 0.0,
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "close": 0.0,
+        "pre_close": 0.0,
+        "pct_chg": 0.0,
+        "vol": 0.0,
+        "amount": 0.0
+      }
+    },
+    "daily": {
+      "rows": 1587882,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "vol",
+        "amount"
+      ],
+      "key_columns": [
+        "ts_code",
+        "trade_date"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "ts_code": 0.0,
+        "trade_date": 0.0,
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "close": 0.0,
+        "pre_close": 0.0,
+        "vol": 0.0,
+        "amount": 0.0
+      }
+    },
+    "adj_factor": {
+      "rows": 1617416,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "key_columns": [
+        "ts_code",
+        "trade_date"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "ts_code": 0.0,
+        "trade_date": 0.0,
+        "adj_factor": 0.0
+      }
+    },
+    "daily_basic": {
+      "rows": 1587884,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "turnover_rate",
+        "volume_ratio",
+        "pb",
+        "total_mv",
+        "circ_mv"
+      ],
+      "key_columns": [
+        "ts_code",
+        "trade_date"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "ts_code": 0.0,
+        "trade_date": 0.0,
+        "turnover_rate": 1e-06,
+        "volume_ratio": 0.000511,
+        "pb": 0.00275,
+        "total_mv": 1e-06,
+        "circ_mv": 1e-06
+      }
+    },
+    "stk_limit": {
+      "rows": 1615467,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "up_limit",
+        "down_limit"
+      ],
+      "key_columns": [
+        "ts_code",
+        "trade_date"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "ts_code": 0.0,
+        "trade_date": 0.0,
+        "up_limit": 0.0,
+        "down_limit": 0.0
+      }
+    },
+    "suspend_d": {
+      "rows": 27275,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_type",
+        "suspend_timing"
+      ],
+      "key_columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_type",
+        "suspend_timing"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "ts_code": 0.0,
+        "trade_date": 0.0,
+        "suspend_type": 0.0,
+        "suspend_timing": 0.994684
+      }
+    },
+    "memberships": {
+      "rows": 170400,
+      "columns": [
+        "ts_code",
+        "weight",
+        "signal_date",
+        "index_snapshot_date"
+      ],
+      "key_columns": [
+        "signal_date",
+        "ts_code"
+      ],
+      "key_definition_complete": true,
+      "duplicate_key_rows": 0,
+      "duplicate_key_groups": 0,
+      "exact_duplicate_rows": 0,
+      "null_fraction": {
+        "ts_code": 0.0,
+        "weight": 0.0,
+        "signal_date": 0.0,
+        "index_snapshot_date": 0.0
+      }
+    }
+  }
+}

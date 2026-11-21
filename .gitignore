@@ -1,0 +1,40 @@
+# Data and generated artifacts
+**/data/*
+!**/data/README.md
+cache/
+prepared/
+out/
+output/
+predictions/
+checkpoints/
+logs/
+*.pkl
+*.npz
+*.parquet
+*.sqlite
+*.db
+*.zip
+
+# Environments
+.venv/
+venv/
+venv311/
+venv313/
+pythons/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Secrets and local config
+.env
+.env.*
+*.token
+secrets/
+.github_token
+.git-credentials
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
